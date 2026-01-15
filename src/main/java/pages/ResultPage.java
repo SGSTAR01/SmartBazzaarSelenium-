@@ -3,6 +3,7 @@ package pages;
 import base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilitis.ScrollUtil;
@@ -12,6 +13,7 @@ import java.util.List;
 
 public class ResultPage extends BasePage {
     @FindBy(xpath = "//main[@id='main']/ul/li")
+    @CacheLookup
     private List<WebElement> productItems;
     private By productName = By.tagName("h2");
 
@@ -34,7 +36,7 @@ public class ResultPage extends BasePage {
                 }
             }
         } catch (Exception e) {
-            System.out.println("Product not found :" +expectedName);
+            throw new RuntimeException("Product not found :" +expectedName);
         }
     }
 }

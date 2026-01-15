@@ -14,7 +14,7 @@ public class GetProductPriceTest extends BaseTest{
         homePage.closePopUp();
         homePage.searchFor("rice");
 
-        resultPage.selectProduct("Steel Pongal Pot Pack (White Rice)");
+        resultPage.selectProduct("Shree Krishna Premium Basmati Rice (5kg)");
 
         String price = productPage.getProductPrice();
         System.out.println("Product Price: " + price);
