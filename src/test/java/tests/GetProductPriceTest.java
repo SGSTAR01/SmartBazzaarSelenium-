@@ -9,7 +9,7 @@ import tests.dataprovider.SearchDataProvider;
 
 public class GetProductPriceTest extends BaseTest{
     @Test(dataProvider = "productData" , dataProviderClass = SearchDataProvider.class)
-    public void searchProductAndPrintPrice(String searchKey , String productName) {
+    public void searchProductAndPrintPrice(String searchKey , String productName, String expectedPrice) {
         HomePage homePage = new HomePage();
         ResultPage resultPage = new ResultPage();
         ProductPage productPage = new ProductPage();
@@ -21,7 +21,6 @@ public class GetProductPriceTest extends BaseTest{
         resultPage.selectProduct(productName);
 
         String price = productPage.getProductPrice();
-        System.out.println("Product Price: " + price);
-//        Assert.assertEquals(price,"£12.99");
+        Assert.assertEquals(price,expectedPrice);
     }
 }

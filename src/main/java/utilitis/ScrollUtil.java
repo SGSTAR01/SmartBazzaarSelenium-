@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class ScrollUtil {
     public static void scrollToElement(WebElement element) {
-        ((JavascriptExecutor) BasePage.driver)
+        ((JavascriptExecutor) BasePage.getDriver())
                 .executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }

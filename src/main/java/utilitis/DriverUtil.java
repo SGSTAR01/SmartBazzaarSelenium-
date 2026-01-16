@@ -7,17 +7,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class DriverUtil {
 
     public static void initDriver() {
-        BasePage.driver = new ChromeDriver();
-        BasePage.driver.manage().window().maximize();
-    }
-
-    public static WebDriver getDriver() {
-        return BasePage.driver;
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        BasePage.setDriver(driver);
     }
 
     public static void quitDriver() {
-        if (BasePage.driver != null) {
-            BasePage.driver.quit();
+        WebDriver driver = BasePage.getDriver();
+        if (driver != null) {
+            try {
+                driver.quit();
+            } finally {
+                BasePage.removeDriver();
+            }
         }
     }
 }

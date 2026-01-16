@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - Search Tests</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>Search Tests</h1>
+<p>
+  Test duration: 97.495s
+</p>
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">tests.GetProductPriceTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  searchProductAndPrintPrice
+      </td>
+  <td class="duration">
+    13.399s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"rice", "Shree Krishna Idly Rice (10kg)", "£15.90"</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.AssertionError: expected [£15.90] but found [£15.99]</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              org.testng.Assert.fail(Assert.java:111)<br />
+              org.testng.Assert.failNotEquals(Assert.java:1590)<br />
+              org.testng.Assert.assertEqualsImpl(Assert.java:150)<br />
+              org.testng.Assert.assertEquals(Assert.java:132)<br />
+              org.testng.Assert.assertEquals(Assert.java:656)<br />
+              org.testng.Assert.assertEquals(Assert.java:666)<br />
+              tests.GetProductPriceTest.searchProductAndPrintPrice(GetProductPriceTest.java:24)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)<br />
+              org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)<br />
+              org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)<br />
+              java.base/java.lang.Thread.run(Thread.java:1583)<br />
+                </div>
+      </td>
+</tr>
+      </table>
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">tests.GetProductPriceTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  searchProductAndPrintPrice
+      </td>
+  <td class="duration">
+    18.829s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"rice", "Telugu Foods Mamra/Pori/Puffed Rice (500g)", "£2.69"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  searchProductAndPrintPrice
+      </td>
+  <td class="duration">
+    19.151s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"rice", "Steel Pongal Pot Pack (White Rice)", "£15.99"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  searchProductAndPrintPrice
+      </td>
+  <td class="duration">
+    18.749s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"rice", "Niru White Raw Rice (1kg)", "£2.59"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  searchProductAndPrintPrice
+      </td>
+  <td class="duration">
+    12.615s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"rice", "Rigel Spices Ponni Boiled Rice (10kg)", "£17.99"</span><br />
+    
+        
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>

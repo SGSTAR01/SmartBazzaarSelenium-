@@ -9,13 +9,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class WaitUtil {
-    public static WebDriverWait wait = new WebDriverWait(BasePage.driver, Duration.ofSeconds(10));
 
     public static void waitForVisible(WebElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
+       WebDriverWait wait = new WebDriverWait(BasePage.getDriver(), Duration.ofSeconds(30));
+       wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public static void waitForClickable(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(BasePage.getDriver(), Duration.ofSeconds(30));
         wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static void waitForPresence(By locator) {
+        new WebDriverWait(BasePage.getDriver(),Duration.ofSeconds(30)).until(
+                ExpectedConditions.presenceOfElementLocated(locator)
+        );
     }
 }

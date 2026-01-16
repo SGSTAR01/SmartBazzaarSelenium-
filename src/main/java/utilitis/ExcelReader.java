@@ -1,5 +1,6 @@
 package utilitis;
 
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -23,7 +24,8 @@ public class ExcelReader {
             for (int i = 1; i <= rows ; i++) {
                 Row row = sheet.getRow(i);
                 for (int j = 0; j < cols; j++) {
-                    data[i-1][j] = row.getCell(j).getStringCellValue();
+                    Cell cell = row.getCell(j,Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+                    data[i-1][j] = row.getCell(j).toString().trim();
                 }
             }
             return data;

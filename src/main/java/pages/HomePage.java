@@ -2,6 +2,7 @@ package pages;
 
 import base.BasePage;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,6 +10,7 @@ import utilitis.WaitUtil;
 
 public class HomePage extends BasePage {
 
+    private final WebDriver driver;
     @FindBy(xpath = "//div[@class='brave_popup__close__button']")
     private WebElement popUp;
 
@@ -16,6 +18,7 @@ public class HomePage extends BasePage {
     private WebElement searchBox;
 
     public HomePage() {
+        this.driver = BasePage.getDriver();
         PageFactory.initElements(driver,this);
     }
 

@@ -4,8 +4,8 @@ import org.testng.annotations.DataProvider;
 import utilitis.ExcelReader;
 
 public class SearchDataProvider {
-    @DataProvider(name = "productData")
+    @DataProvider(name = "productData", parallel = true)
     public static Object[][] productData() {
-        return ExcelReader.getData("src/test/resources/testData/SearchData.xlsx","Products");
+        return ExcelReader.getData("src/test/resources/testdata/SearchData.xlsx","Products");
     }
 }
