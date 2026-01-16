@@ -15,7 +15,7 @@ public class GetProductPriceTest extends BaseTest{
         ProductPage productPage = new ProductPage();
 
         homePage.openSite("https://www.smartbazaar.co.uk/");
-        homePage.closePopUp();
+//        homePage.closePopUp();
         homePage.searchFor(searchKey);
 
         resultPage.selectProduct(productName);
