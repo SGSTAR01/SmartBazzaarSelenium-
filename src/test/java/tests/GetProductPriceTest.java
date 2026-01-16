@@ -1,22 +1,27 @@
+package tests;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.ProductPage;
 import pages.ResultPage;
+import tests.dataprovider.SearchDataProvider;
 
 public class GetProductPriceTest extends BaseTest{
-    @Test
-    public void searchProductAndPrintPrice() {
+    @Test(dataProvider = "productData" , dataProviderClass = SearchDataProvider.class)
+    public void searchProductAndPrintPrice(String searchKey , String productName) {
         HomePage homePage = new HomePage();
         ResultPage resultPage = new ResultPage();
         ProductPage productPage = new ProductPage();
 
         homePage.openSite("https://www.smartbazaar.co.uk/");
         homePage.closePopUp();
-        homePage.searchFor("rice");
+        homePage.searchFor(searchKey);
 
-        resultPage.selectProduct("Shree Krishna Premium Basmati Rice (5kg)");
+        resultPage.selectProduct(productName);
 
         String price = productPage.getProductPrice();
         System.out.println("Product Price: " + price);
+//        Assert.assertEquals(price,"£12.99");
     }
 }
